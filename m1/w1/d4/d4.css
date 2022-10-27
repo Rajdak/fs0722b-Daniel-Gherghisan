@@ -1,0 +1,89 @@
+body{
+    
+    background-image: url(css/sfondo.png);
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    padding: 1rem;
+}
+.pre{
+    padding: 20px;
+    background-color: rgb(141, 175, 164);
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+   
+}
+.main{
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: antiquewhite; 
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+span{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    src: local(webfonts);
+}
+
+.fa-ember:before {
+    content: "\f423"; }
+.a{
+    margin-top: 20px;
+}
+#viola{
+    color: slateblue;
+}
+.conto{
+    white-space: nowrap;
+    border: 1px solid #000000;
+    overflow: hidden;
+    text-overflow: clip;
+}
+.lista2{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#para{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.table{
+    
+}
+table, th, td {
+    border: none;
+    background-color: antiquewhite;
+}
+th{
+    background-color: aquamarine;
+}
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+#lin{
+    border: 2px solid blue;
+}
+#spa{
+    overflow: hidden;
+    border: 20px;
+}
+.spaz{
+    height: 200px;
+    width: 400px;
+    background-color: lightgrey;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+#nov{
+    font-weight: 2rem;
+    font-size: 30px;
+}
+button{
+    text-align: end;
+}
+  
