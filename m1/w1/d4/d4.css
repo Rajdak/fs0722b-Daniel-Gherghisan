@@ -17,10 +17,12 @@ body{
 }
 .main{
     margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
     background-color: antiquewhite; 
     padding: 20px;
     box-sizing: border-box;
+    text-align: center;
     
 }
 span{
@@ -73,17 +75,22 @@ th, td {
     border: 20px;
 }
 .spaz{
-    height: 200px;
-    width: 400px;
+    height: 150px;
+    margin: 50px;
     background-color: lightgrey;
-    box-sizing: border-box;
+    box-sizing: content-box;
     border-radius: 20px;
-}
-#nov{
-    font-weight: 2rem;
-    font-size: 30px;
 }
 button{
     text-align: end;
 }
-  
+.spazi{
+    height: 150px;
+    background-color: lightgrey;
+    box-sizing: content-box;
+    text-align: left;
+    border: 10px solid lightgray;
+}
+.be{
+    text-align: right;
+} 
