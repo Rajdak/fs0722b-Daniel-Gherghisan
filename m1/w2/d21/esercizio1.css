@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+    background-color: aliceblue;
+}
+h1{
+    font-size: 100px;
+    color: red;
+}
+p{
+    font-size: 50px;
+}
+button{
+    font-size: 35px;
+}
