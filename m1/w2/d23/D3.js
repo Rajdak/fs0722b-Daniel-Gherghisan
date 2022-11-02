@@ -77,10 +77,10 @@ else{
 */
 var totalShoppingCart = 150
 if(totalShoppingCart > 50){
-  console.log((totalShoppingCart / 100) *20)
+  console.log((totalShoppingCart / 100) *20 + '$' + ' ' + 'questo è lo sconto applicato')
 }
 else{
-  console.log( ((totalShoppingCart - 10) /100) *20 )
+  console.log( ((totalShoppingCart - 10) / 100) *20 + '$' + ' ' + 'questo è lo sconto applicato' )
 }
 
 /* ESERCIZIO 7
@@ -88,34 +88,54 @@ else{
   Utilizzando un blocco condizionale, crea un algoritmo per ordinarle secondo il loro valore, dal più alto al più basso.
   Alla fine mostra il risultato in console.
 */
+var num5 = 10
+var num6 = 22
+var num7 = 4
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
+
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
 */
+let test = 'ciao'
+if(typeof test === "number"){
+  console.log('è un numero')
+}
+else{
+  console.log('non è un numero')
+}
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 9
   Crea un algoritmo per controllare se un numero fornito sia pari o dispari (suggerimento: cerca l'operatore modulo su un motore di ricerca)
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+var num9 = 4
+var risultato = num9 % 2
+if(risultato == 0){
+  console.log('è un numero pari')
+}
+else{
+  console.log('non è pari')
+}
 
 /* ESERCIZIO 10
   Modifica la logica del seguente algoritmo in modo che mostri in console il messaggio corretto in ogni circostanza.
-  let val = 7
-  if (val < 10) {
+  */
+
+  let val = 3
+  if ( val < 10 && val >= 5) {
       console.log("Meno di 10");
     } else if (val < 5) {
       console.log("Meno di 5");
     } else {
       console.log("Uguale a 10 o maggiore");
     }
-*/
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
+
 
 /* ESERCIZIO 11
   Fornito il seguente oggetto, scrivi del codice per aggiungere una proprietà "city", il cui valore sarà "Toronto".
@@ -125,15 +145,16 @@ const me = {
   name: 'John',
   lastName: 'Doe',
   skills: ['javascript', 'html', 'css'],
+  city: 'Toronto',
 }
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 12
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 13
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
