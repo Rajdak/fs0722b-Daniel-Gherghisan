@@ -63,11 +63,11 @@ else{
 */
 
 var totalShoppingCart = 150
-if(totalShoppingCart > 50){
+if(totalShoppingCart < 50){
   console.log(totalShoppingCart)
 }
 else{
-  console.log( totalShoppingCart - 10)
+  console.log( totalShoppingCart + 10)
 }
 
 
@@ -76,11 +76,11 @@ else{
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
 */
 var totalShoppingCart = 150
-if(totalShoppingCart > 50){
+if(totalShoppingCart < 50){
   console.log((totalShoppingCart / 100) *20 + '$' + ' ' + 'questo è lo sconto applicato')
 }
 else{
-  console.log( ((totalShoppingCart - 10) / 100) *20 + '$' + ' ' + 'questo è lo sconto applicato' )
+  console.log( ((totalShoppingCart + 10) / 100) *20 + '$' + ' ' + 'questo è lo sconto applicato' )
 }
 
 /* ESERCIZIO 7
@@ -147,6 +147,8 @@ const me = {
   skills: ['javascript', 'html', 'css'],
   city: 'Toronto',
 }
+me.city = 'Toronto'
+console.log(me);
 
 
 
@@ -154,22 +156,29 @@ const me = {
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
 */
 
+delete me.lastName;
+console.log(me)
+
+
 
 
 /* ESERCIZIO 13
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
 */
+delete me.skills[2]
+console.log(me)
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 14
   Scrivi del codice per creare un array inizialmente vuoto. Riempilo successivamente con i numeri da 1 a 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
+
 
 /* ESERCIZIO 15
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
