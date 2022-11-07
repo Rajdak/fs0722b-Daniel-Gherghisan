@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #orologio{
+            position:relative;
+            left: 100px;
+            top: 100px;
+        }
+        .lancetta{
+            position: relative;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+   <div id="time"></div>        <!-- Creamo un orologio digitale-->
+   <div id="orologio">
+        <hr class="lancetta">
+   </div>
+
+
+    <script>
+        // il file si attacca alla data e ora del browser perchè non ha un accesso al server 
+        let now = new Date();  //possiamo creare nuovi oggetti Date anche per semplicemente un confronto da utilizzare in qualche If
+        let anno = now.getFullYear();
+        let mese = now.getMonth();  //conteggio come gli arrey da 0 a 11
+        let giorno = now.getDay()  //domenica è il primo giorno della settimana
+        let giornoMese = now.getDate(); //vai a chiedere il giorno del mese corrente
+        let orario = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();  //cosi andiamo a chiedere l'ora,minuti e secondi
+
+        let passato = new Date('2/2/2022 22:22:22'); //creiamo una data nel passato da confrontare
+
+        if(passato < now){      //creamo un if con le condizioni se passato è minore di now per avere in uscita i valori dati
+            console.log('ok');
+            console.log(passato.getTime(), now.getTime()); //faccio vedere il numero di millisecondi passati dalla data del 2 febbraio al 1970
+        }
+
+        
+        
+        
+        console.log(anno, mese, giorno, giornoMese, orario);
+
+
+        setInterval(function(){
+            let time = new Date()
+            document.getElementById('time').textContent = time.toLocaleTimeString()  //estraggono la data e l'orario dal browser
+            //esperimento della lancetta
+            let lancetta = document.querySelector('#orologio .lancetta')
+            lancetta.style.transform = 'rotate(${time.getSeconds() *6 }deg)' ;
+        }, 1000) //il 1000 sta per ogni quanti millisecondi la funzione deve eseguire
+   
+        
+
+        console.log(now.toLocaleTimeString()); //esce fuori l'orario
+        console.log(now.toLocaleDataString());    //esce fuori la data
+
+
+        let opt = {     //possimao creare delle optzioni da inserire come variabili
+            weekday:'long',
+            yeat:'numerica',  //questi sono oggetti di configurazione
+            month:'long',   
+            day:'numeric'
+        }
+        let dataFormattata = now.toLocaleDaraString('it-IT') // data una stringa specifica di data ci tira fuoti una data già formattata (e anche l'orario)
+        console.log(dataFomrattata)
+   
+   
+   
+   
+   
+   </script>
+
+</body>
+</html>

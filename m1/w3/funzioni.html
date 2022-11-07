@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+    function nomeFunzione(){         //alert è una funzione build-in ma che non restituisce nulla, abbiamo anche promt che come alert è una funzione però lui restituisce il dato
+        console.log("Test");         //questa funzione non restituisce nulla, e questo lo capisco perchè non c'è il return, se mettessimo il return di test allora restituisce il dato
+        return 'Test';                                                                                                                                           
+        }
+        console.log(nomeFunzione())     //non c'è il return perciò uscirà undefinied e non restituisce nulla
+
+
+        //funzioni parametrizzate
+
+        function somma(a,b){    //creamo una funzione che restituisce una somma tra due elementi numerici
+            return a+ b;
+        }
+        console.log( somma(3,6))
+        console.log( somma(3))     //questa stringa uscirà undefined perchè il secondo valore non viene definito ( 3 + undefinited = undefinited)
+        // possiamo anche lanciare un errore per segnalare a chi vede il codice che ha dimenticato di mettere il valore
+        //  per farlo scriviamo throw new Error('manca uno dei due parametri'), cosi creamo un block error
+        
+        
+        function sommas(c,d){
+            if(c !== undefined && b !== undefined){     //possiamo anche fare una funzione un pò più complicata
+
+                return c + d;
+            }
+            
+        }
+        console.log( somma(4,3))    // in termini booleani se uno dei valori fosse 0, verrebbe letto come Nan perche risulterebbe non definita ( undefined)
+
+        function sommaDefault(e = 0,f = 0 ){
+            return e + f;
+        }
+            // posso settare un valore di default su tutti i parametri che ritengo facoltativi
+        console.log(sommaDefault(5))
+        console.log(sommaDefault(3, 8))
+
+        //operatori di spread
+
+        function sommaPro(a,...altro){
+            console.log(a);
+            console.log(altro);
+        }
+        
+        sommaPro('ciao', 1,2,3,4,5) //il primo parametro andrà a infilarsi al paramtero a, e gli altri parametri di altro andranno a inserirsi dopo a
+        
+           //per dare solo gli elementi di numeri, creamo un ciclo for of
+
+        function sommaProz(...numeri){
+            
+            return numeri.reduce(function(p,c){return p + c});  //questo è un modo fortissimo, si chiama reducee si va a riciclare gli elemtni p e c, p è il valore di partenza dell'arrey e andrà avanti sommando ogni elemento partendo dal primo al secondo, p1= 1+2, p2=3+3, p3=6+4 e cosi via fino a sommare tutti i parametri
+        }
+        let risultato = sommaProz(1,2,3,4,5);
+        console.log(risultato)
+
+        // self invoking function
+
+        let dato = (function(){        // le parentesi tonde dice che devi evocare una funzione ed eseguirla
+            return 'ecco il dato';
+        })()    //la funzione cosi si dichiara e si autoesegue
+        console.log(dato);
+        // autoinvokare serve perchè magari ho bisgono di una variabile contine dei valori che devono essere prelavorati prima di essere lanciati
+        
+        //accessibilità variabili
+
+        var a = 0;
+
+        function test(){
+            var b = 1;
+            console.log(b) //accedo a b perchè ha scope locale e sono all'interno della funzione
+            console.log(a)  //accedo ad a perchè ha scope globale
+        }
+        //console.log(b) non posso perchè esiste solo nella funzione
+        test();
+
+        //funzioni freccia
+        
+        const nomeFunzione2Freccia = () => 'test';
+        console.log( nomeFunzione2Freccia() );
+        // fa il return a test
+
+        const fnFrecciaParametrica = a => a * 2; //con un solo parametro non sono obbligato a mettere le parentesi tonde
+
+        console.log(fnFrecciaParametrica(5))
+        
+
+        const textToMaiusc = (testo) => {  
+            let maiuscText = testo.toUpperCase(); //trasforma un testo in maiuscolo
+            console.log(maiuscText);
+        }   
+        textToMaiusc('ciao')
+
+        //closures
+
+        function funzioneGenitore(){
+            let a = 5;
+            function funzioneFiglia(){
+                let b = 8;  //definiamo la funzione figlia dentro al genitore
+                console.log(a)
+            }
+            //non possiamo definire la funzione figlia fuori da quella genitore
+            funzioneFiglia();
+        }
+        funzioneGenitore();
+
+        function aFn(x){      // afn restituisce una funzione, perciò eseguiamo una funzione con le parentesi tonde
+            return function b(y){
+                return function c(z){
+                    return x + y + z;
+                }
+            }
+         }
+        // pre richiamare le funzioni dentro alla funzione genitore facciamo
+        console.log( aFn(5)(6)(7)) //usiamo le tonde perchè sono tutte funzioni
+
+        //q
+
+
+</script> 
+
+</body>
+</html>l
