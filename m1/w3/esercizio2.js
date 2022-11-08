@@ -155,4 +155,6 @@ console.log(stringaz)
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-
+function giveMeRandom(n){
+    let array :[]
+}
