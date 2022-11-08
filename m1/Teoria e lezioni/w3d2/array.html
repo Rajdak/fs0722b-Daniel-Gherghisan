@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    console.log([1,2,3,4,5].length);
+    console.log(Array.isArray([1,2,3,4,5]));  //cosi ci dice se è un array o no, è la sintassi per vedere se una variabile è di un determinato tipo
+
+    document.write({});  // [object Object]
+    document.write([1,2,3,4,5]);  //conversione di un array in stringa
+     
+    
+    //METODI DELL'ARREY
+    
+    // sort() riordina un arraty in ordine di grandezza numerica
+    // indexOf() ci restituisce la posizione di una parola dentro a un array
+    // lastindex() ci restituisce la pozizione di una parola ma calcola dalla fine del'arrey
+    // search() ci restituisce una parola come gli indexOf() ma a differenza dei due sopra elencati, ma il search() grazie alle espresioni regolari ci fa una ricerca molto più avanzata
+    // slice() substring() substr() sono 3 metodi che estraggono delle parti di stringa. Slice() accetta due parametri (inzio e fine) e in base a quei parametri es: slice(8) farà si che taglierà tutto fino alla posizione 8 e poi restituirà tutto il resto
+    
+    // substring() è analogo al metodo Slice() ma non accetta posizioni negative
+    // substr() come slice() ma il secondo parametro indica la lunghezza della stringa da tagliare, parte da un punto e continua fino a.
+    // replace() sostituisce un carattere in una stringa: esso crea una nuova stringa con il carattere sostituito, è case sensitive e sostituisce tutte le occorrenze della parola specifica
+    
+    let stringa = 'ggg,jjj,ooo,GGG,ppp,gGg';
+    let str1 = stringa.replace(/,/g,'.');  // sostituiamo tutte le virgole con i puntini (gli elementi //g danno il comando al metodo di cercare tutti gli eleemnti all'interno e cambiarlo)
+    let str2 = stringa.replace(/ggg/gi,'###'); // //gi dice che va a cercare tutti gli elementi case sensitive o meno (maiuscole e minuscole)
+    document.write( str1 );
+    document.write( '<br>');
+    document.write( str2);
+    
+    // concat() concateniamo due stringhe o parti (sostituisce l'operatore +). 
+    // trim() ci elimina gli spazi vuoti di una stringa
+    // charAt() indichiamo un carattere data una posizione indicata es: var stringa = "Ciao a tutti"  var carattere = stringa.charAt(0); in ouput avremo 'C'
+    // split() ci suddivide la stringa in un array
+
+    console.log(stringa.split(','));   //cercherà tutte le virgole e farà un taglio al posto della virgola
+
+    // join() lui da un array crea una stringa (contrario di split())
+
+    console.log(stringa.split('g').join('#'));  //join non è Casesensitive
+
+    // push() pop()
+    // delete()  cancella un elemento dell'array
+    // splice() crea una lista aggiungendo elementi nella posizione indicata e rimuovendo il resto ( è importante e lo imparo)
+    
+    // OPERATORI MATEMATICI
+    // + - * / % (modulo) **(elevamento alla potenza)
+    // ++ (incremento di uno) -- ( decremento di uno)
+    // vengono ripsettate le regole di precedenza matematica
+    // Math() offre molti strumenti per la gestione di operazioni matematiche (sintassi == Math,metodo(numero))
+            // ci sono moltissimi metodi di math()
+
+    </script>
+</body>
+</html>
+

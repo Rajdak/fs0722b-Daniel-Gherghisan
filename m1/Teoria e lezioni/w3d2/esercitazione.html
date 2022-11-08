@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+
+<style>
+#scacchiera{
+    width: 450px;
+    height: 450px;
+    border: 1px solid black;
+}
+.casella{
+    height: calc(100% / 8 - 2px);
+    width: calc(100% / 8 - 2px);
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: -0.0rem;
+    margin-bottom: -0.2rem;
+}
+</style>
+</head>
+<body>
+    
+    
+    <div id="scacchiera"></div>
+
+
+
+
+
+
+
+<script>
+
+    let scacchiera = document.querySelector('#scacchiera'); //querySelector da un oggetto del dom (sono i tag di html, definiti come oggetti) o un null
+    for(let i = 0; i < 8; i++){   //facciamo un for che ripeta uno stesso oggetto 8 volte, meglio del creare un arrey per 8 volte
+        for(let j = 0; j < 8; j++){
+            let colore = (i + j) % 2 ? '#000' : '#fff'; //usiamo il ternario per andare a calcolare dove mettere la casella nera e bianca
+            
+            let div = document.createElement('div')   //createElement() è un metodo che ci fa creare un elemento (nel dom) ma non lo fa apparire da nessuna parte però lo tiene in memoria, per farlo apparire usiamo il metodo append()
+                console.log(div);
+                div.classList.add('casella')     // accedi alla lista di classi e a questa aggiungi la classe casella
+                scacchiera.append(div) //prendi il div creato e lo mette dento a scacchiera
+                div.style.backgroundColor = colore;  //assegnamo il colore adesso
+                
+                
+                
+                // scacchiera.innerHTML += `<div class="casella" style="background-color:${colore}"> ${i} - ${j} </div>`; // stringa con concatenato stringa + i + altra stringa ---- questa è acnhe un altro metodo per assegnare il colore
+        }
+    }
+</script> 
+        
+        
+</body>
+</html>
