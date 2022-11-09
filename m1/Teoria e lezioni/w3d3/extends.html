@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Veicolo {         //creiamo una classe generica veicolo con molte generalità
+
+            constructor(_maxVel = null,_nruote = 2){   //li diamo 2 parametri con un valore di default
+                this.nruote = _nruote;        //mettiamoli le proprietà
+                this.maxVel = _maxVel;          //mettiamo come valore _maxVel e _nruote perchè cosi se non metteremo dei valori darà di defaul i valori decisi nei parametri del costruttore
+                this.vel = 0;
+                console.log("Classe istanziata")
+            }
+
+            accellera(vel = 1){     //mettiamo un metodo accellera che verraà ereditato dalle classi di Veicolo e verraà sostituito 
+                this.vel += vel;
+            }
+
+            frena(vel =1){
+                this.vel -= vel;
+            }
+        }
+
+        let veicolo = new Veicolo()
+        console.log(veicolo)    //creamo una variabile veicolo partendo da Veicolo
+
+        class Bicicletta extends Veicolo{
+            constructor(){
+                super(40)
+
+            }
+            
+            hasCasters(boolean){    //li sto dicendo che se il valore è true, allora il veicolo avrà 2 ruote in piu, ( stiamo specificando se la bicicletta ha le rotelle o no)
+                if(boolean){
+                    this.nruote += 2
+                }
+                else{
+                    this.nruote -= 2;
+                }    
+            
+            }
+        }
+
+        let biciAdulto = new Bicicletta()
+        console.log('Numero ruote bici per adulto;' + biciAdulto.nruote)
+        let biciBimbo = new Bicicletta()
+        biciBimbo.hasCasters(true)
+        console.log('Numero ruote bici per bimbi;' + biciBimbo.nruote)
+        
+        class Automobile extends Veicolo {       //creo la classe Automobile partendo dal modello di Veicolo
+
+            constructor(_marca,_porte,_maxVel,_nruote){        //lio mettiamo anche a lui un cosntructor
+                super(_maxVel,4);        //richiamiamo il costruttore della classe "Padre", ovvero il constructor di Veicolo
+                //il super darà al nuovo costruttore anche i parametri imposti dal padre e poi noi potremo riadre nel super come nuovi parametri
+                this.marca = _marca;
+                this.porte = _porte
+            }
+        }
+
+        let automobile = new Automobile('Mini',3,280);  //creamo una variabile nuova partendo tutto dalla classe Veicolo e usando l'extend
+        automobile.accellera = 5;
+        automobile.frena = 0;
+        console.log(automobile)
+
+
+
+
+    </script>
+</body>
+</html>

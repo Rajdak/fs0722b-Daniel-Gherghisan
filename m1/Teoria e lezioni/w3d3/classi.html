@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Persona{      //programmazione per classi
+
+            constructor(_nome, _cognome){      //è una funzione per mettere gli attributi dento a class Persona, mettiamo cosi quanti e quali attributi vogliamo, construcotr è un metodo che può anche svolgere delle operazioni
+                this.nome = _nome;
+                this.cognome = _cognome;        //nel constructor definiamo le proprietà con this, e facciamo solo questo
+                this.presentazione();       //va a cercare presentazione di mario e andrea e va a lanciarla, quindi il construcotr può essere anche un modo per lanciare qualche funzione
+            }
+
+            presentazione(){
+                console.log(`ciao,mi chiamo ${this.nome} ${this.cognome}`);
+            }
+            
+            static speigazione(){  //è un metodo statico
+                console.log('questa classe serve per descrivere persona')
+            }
+        }
+
+        Persona.spiegazione()   //questo è un metodo statico, richiamandola partendo dal nome della classe, perchò cosi lo possiamo cambiare senza creare un istanza come andrea e mario
+
+        let mario = new Persona();      //qui sto istanziando un oggetto
+            console.log(mario)
+        
+
+            let andrea = new Persona();
+            andrea.nome = 'Andrea';
+            andrea.cognome = 'Ancona'
+            console.log(andrea)
+            andrea.presentazione();
+
+
+
+
+
+</script>
+</body>
+</html>

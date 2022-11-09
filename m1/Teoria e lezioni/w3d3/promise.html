@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let p = new Promise(function(pippo, pluto){     //Promise come parametro vuole una funzione di callback
+            //i due parametri sono delle funzioni, per questo sono gialle
+
+            let password ='password';
+            if(password == 'password'){      //la promise va a vedere delle condizioni che noi impostiamo, e in base se la condizione verrà rispettara o meno fara partire una delle due funzioni di callback
+                pippo('pippa di brutto');   //ESEGUE LA PRIMA CALL BACK
+            }
+            else{
+                pluto('non pippa di brutto');   //ESEGUE LA SECONDA CALL BACK
+            }
+            })   
+            
+            p.then(
+                (pippo)=>console.log(pippo),
+                (pluto)=>console.log(pluto)
+                )   //then è il metodo che gestirà il dato ricevuto dalle callback
+                //dopo che il promise da l'output, il then farà si che prendera il risultato e lo metterù nel risultato, poi noi andremo a darli un comando (in questo caso console.log) per mostrare il risultato
+                //con pluto andremo a eseguire nel caso se if fosse false e quindi uscirà Pluto
+            
+            //le promise possono anche essere senza gli errori
+            
+
+
+    </script>
+</body>
+</html>
