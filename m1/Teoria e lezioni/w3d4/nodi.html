@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="lista">
+
+    </div>
+
+    <button id="crea">Crea</button>
+    <button id="elimina">Elimina</button>
+
+
+    <script>
+
+        let crea = document.querySelector('#crea');
+
+        let arrayDiv = [];
+
+        crea.addEventListener('click', function(){
+
+            let div = document.createElement('div');
+            let divText = document.createTextNode('Div Creato');   //crea un Textnode, e lo consideriamo come il parallelo di TextContent
+            //div.innerHtml = 'Div creato';
+
+            arrayDiv.push(div);
+
+            div.append(divText);
+            document.querySelector('#lista').append(div)
+
+            div.addEventListener('click', function(){
+
+                div.remove();
+
+            })
+    })
+
+    //creamo un bottone epr cancellare gli elementi
+
+    let eleimin = document.querySelector('#elimina');
+    elimina.addEventListener('click',function() {
+
+        for(let el of arrayDiv){
+            el.remove()   //cosi vado a richiamare ogni div in el e rimuove l'elemento, prima creo un array div e vado a pushare tutti i div dento (sopra nel codice)
+            }
+    })
+
+    </script>
+</body>
+</html>
