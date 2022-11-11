@@ -261,10 +261,32 @@ const movies = [
   /* ESERCIZIO 12
     Scrivi una funzione per trovare il film più vecchio nell'array fornito.
   */
-  
+ 
+    function fileVecchio(arr){
+      let piuVecchio = 0;
+      for( let i = 0 ; i < arr.length ; i++){
+        if(arr[i].Year < arr[piuVecchio].Year){
+          piuVecchio = i;
+        }
+      }
+      return arr[piuVecchio];
+    }
+    console.log(fileVecchio(movies));
+
   /* ESERCIZIO 13
     Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
   */
+
+    function numFilm(arr){
+      let cont = 0;
+      for( let i of arr){
+        if( i.Type == "movie"){
+          cont++
+        }
+      }
+      return cont;
+    }
+    console.log("Ci sono N: " + numFilm(movies) + " film")
   
   /* ESERCIZIO 14
     Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
