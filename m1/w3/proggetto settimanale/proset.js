@@ -273,8 +273,6 @@ function onlyLetters (){
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
-
-
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
@@ -302,13 +300,6 @@ console.log(whatDayIsIt())
       values: [3, 3, 4]
   }
 */
-
- //function rollTheDices (n){
-
-
-
-
-
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
@@ -341,10 +332,41 @@ console.log(howManyDays("11/11/2022", "11/6/2022"));  // uscirà un valore di gi
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 
+
+
+  function deleteProp(ogj, str) {   //dichiariamo al funzione con i parametri dati
+    delete ogj[str]     //diamo il delete al contenuto dell parametro oggetto che ha come contenuto il parametro str  
+    return ogj;   //fa il return di obj
+  }
+  let me11 = {      
+    'name': 'Daniel',
+    'surname': 'Gherghisan',
+    'age': 24
+  };
+
+   console.log(deleteProp(me11, 'age'));     //andiamo  cancellare age da me11
+
+
+
+
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
 
+
+function newestMovie(film) {
+  let piuRecente = 0;
+  let ind = 0;      //dichiariamo due variabili con valori 0, perchè ci servitanno nel ciclo for of
+  for (let i of film) {   //usiamo il ciclo for of 
+    if (i.Year > piuRecente) {    //usiamo un if dove andremo a indicare che per ogni valore di anno (che grazie al ciclo si ripete i volte) se è minore della variabile piuRecente (0)
+      piuRecente = i.Year;  //andrà a dire che allora quello è il film piu recente 
+      ind = film.indexOf(i) //andrà quindi mettere in ind il primo valore (che in questo caso sarà il minore) dell'array generato dal ciclo
+    }
+  }
+  return film[ind];
+}
+
+console.log(newestMovie(movies))
 
 
 /* ESERCIZIO 13
@@ -352,10 +374,10 @@ console.log(howManyDays("11/11/2022", "11/6/2022"));  // uscirà un valore di gi
 */
 
 function countMovies(arr){
-  let cont = 0;
-  for( let i of arr){
-    if( i.Type == "movie"){
-      cont++
+  let cont = 0;       //facciamo una variabl cont per andarla a incrementare 
+  for( let i of arr){   //usiamo un for of perchè vogliamo creare un loop per tutti gli elementi citati (type)
+    if( i.Type == "movie"){   //andiamo a richiamare il type dei film
+      cont++    //incrementiamo il cont 
     }
   }
   return cont;
@@ -367,23 +389,47 @@ console.log("Ci sono N: " + countMovies(movies) + " film")
 */
 
 
+  function onlyTheYears(film) {   //funzione con parametro
+    let anniFilm = []   //array vuoto
+    for (let i of film) {   //usiamo un ciclo for of per andare a creare dei valori che andremo a mettere nell'array anniFilm
+      anniFilm.push(i.Year);  //andiamo a riempire l'array dichiarato prima con tutti gli anni dei film 
+    }
+    return anniFilm;
+  }
+  console.log(onlyTheYears(movies))
+
+
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
+
+
+function onlyInLastMillennium(film) {   //solita funzione con parametro
+  let filmMillennium = [];    //solito array vuoto da riempire con il ciclo for of
+  for (let i of film) {
+    if (i.Year < 2000) {    //usiamo un if dove andremo a specificare che se i è minore degli anni 2000 (indicando il millenio scorso)
+      filmMillennium.push(i)    //pusahmo quindi nell'array vuoto i valori di (i) dei film prodotti negli anni 2000 e prima
+    }
+  }
+  return filmMillennium;
+}
+
+console.log(onlyInLastMillennium(movies))
+
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
 
 function sommaAnni(arr){
-  let sum = 0;
-  for( let i of arr){
-    sum += Number(i.Year);
+  let sum = 0;    //dichiariamo una variabile sum a 0
+  for( let i of arr){   //facciamo un ciclo for of per ogni arr
+    sum += Number(i.Year);   //creamo un sum dove prenderà la somma degli anni (year)
   }
-  return sum;
+  return sum;   //torniamo sum con il valore dato dal ciclo
 }
-console.log(sommaAnni(movies))
+console.log(sommaAnni(movies) + ' ' + 'ore di film')
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
@@ -404,13 +450,42 @@ console.log(sommaAnni(movies))
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 
+{
+  function selecrContainer() {
+    let container = document.getElementById('container');   //con il getElementById andiamo a prendere il valore di un elemento che è rappresentato dall'id, in questo caso container
+    return container;
+  }
+
+  console.log(selecrContainer());
+}
+
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 
+{
+  function selecrTd() {
+    let td = document.getElementsByTagName('td'); //come il getElementById, questo metodo va a prendere il valore dell'elemento rappresentato da td, che non ' un id ma un tag, e quindi andrà a prendere tutti gli eleemnti di quel tag
+    return td;
+  }
+
+  console.log(selecrTd());
+}
+
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+
+{
+  function consolTdText() {
+    let td = document.getElementsByTagName('td');   //richiamiamo gli elementi di td 
+    for (let i of td) {   //ciclo for per poi andare ad aggiungere per ogni i (apice del ciclo) una stringa che in questo caso è 44
+      console.log(i.textContent);
+    }
+  }
+
+  consolTdText();
+}
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
@@ -424,9 +499,30 @@ console.log(sommaAnni(movies))
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+{
+function eliminaLista() {
+  let ul = document.getElementById('myList');
+  ul.textContent = ""         //dopo aver richiamato l'elemento li restituiamo una stringa vuota, e andrà perciò a svuotare la lista data
+}
+
+document.getElementById("elimina-li");
+}
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+
+{
+function classTr() {      
+  let tr = document.getElementsByTagName("tr");   //andiamo sempre a prenderci i nostri valori di per ogni tr
+  for (let i of tr) {   //facciamo un ciclo for ogìf
+    i.classList.add('test');    //andiamo ad gggioungere grazie a classList.add il valore 'test' ad ogni tr
+  }
+}
+
+classTr();
+
+}
 
 // [EXTRA] JS Avanzato
 
