@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.1">
+    <!-- la proprietà initial scale importa il fattoee di zoom inizale( quando la pagina viene caricata)
+         la proprietà usre-scalable permette di consentire o meno all'utnete di ridimensionare/zoomare la pagina 
+         con minimum-scale e maximum-scale posso stabilire quanto l'utente può zoomare
+        
+         https://developer.apple.com/library/ios/DOCUMENTATION/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html
+         http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/     --- link per leggerci la viewport
+        -->
+    <title>Media queries</title> 
+    <style type="text/css">
+        body { background: red;}    /*mobile first*/
+        @media screen and (min-width: 480px){       /* smartphone landscape */     
+            body {background: yellow;}      
+        }  
+        @media screen and (min-width: 768px){       /*tablet, se volessi fare anche per laptop e desktop, metterei rispettivamente le misure in px diverse, 1024 e 1200 */
+            body {background: green;}   
+        } 
+        @media screen and (min-width: 1024px){      
+            body {background: blue;}   
+        } 
+        @media screen and (min-width: 1200px){       
+            body {background: grey;}   
+        } 
+        /* facendo il media screen, avremo si che al cambio di risoluzione della pagina, lo sfondo cambierà colore */
+     article {width: 100%;}
+     article img {max-width: 100%;} /* l'immagine si adatta alla risoluzione mantendendo la grandezza del 100% */
+     
+    /*mettiamo il logo qui sotto */
+     #logo{background: url(immagini\ esercizi/#logo) no-repeat; width: 267px; height: 70px; background-color: bisque;}      /* mettiamo il logo */
+      @media 
+     only screen and (-webkit-min-device-pixel-ratio:2),
+     only screen and (min-resolution: 50dpi){
+        #logo{background: url() no-repeat; width: 267px; height: 70px; background-color: bisque;}
+    }
+    
+
+</style>       
+</head>
+<body>
+    <div id="logo"></div>
+    <article>
+        <img src="P8010025.JPG" alt="#">
+    </article>
+</body>
+</html>
