@@ -4,7 +4,7 @@ body {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   line-height: 1.6;
   padding: 15px;
-  background-image: url("../img/sfondo.png");
+  background-image: url("sfondo.png");
   background-position: center center;
 }
 
@@ -27,12 +27,38 @@ header {
   box-shadow: 0 3px 3px #444;
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
+  position: sticky;
+  z-index: 2000;
+  position: -webkit-sticky;
+  top: 0;
+  
 }
 
 @media screen and (min-width: 800px) {
   header {
     padding: 1em;
   }
+  #icone{
+    color: #a02571;
+    font-size: 50px;
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    padding: 10px;
+    z-index: 2500;
+    text-align: right;
+    
+  }
+  #icone1{
+    color: #a02571;
+    font-size: 50px;
+    position: fixed;
+    right: 20px;
+    bottom: 70px;
+    padding: 10px;
+    z-index: 2500;
+    text-align: right;
+  } 
 }
 
 @media screen and (max-width: 1199px) {
@@ -44,6 +70,7 @@ header {
 @media screen and (min-width: 1200px) {
   header {
     text-align: left;
+   
   }
   header .brand,
   header nav,
@@ -59,6 +86,10 @@ header {
   }
   header .brand p {
     margin-bottom: 0;
+  }
+  .clearfix img{
+    position: static;
+
   }
 }
 
@@ -97,22 +128,74 @@ main {
   }
 }
 
-section {
+#aside1{ float: left; width: 100px;}
+
+#underl{
+  margin-top: 0;
+  margin: 0 auto;
+  width: 350px;
+}
+
+#sec {
   background-color: #e3e3e3;
   padding: 1.5em 1em;
   margin-bottom: 2em;
   position: relative;
+  width: 400px;
+  height: 300px;
+  left: 0;
+  margin: 0 auto;
+  
 }
 
-section h2 {
-  text-align: center;
+#novi {
   color: #333;
   font-size: 1.4rem;
-  margin-bottom: 1.7rem;
   font-weight: bold;
   background-color: #a3a3a3;
-  padding: 0px 1em;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid black
+  ;
 }
+
+#icone{
+  color: #a02571;
+  font-size: 50px;
+  position: fixed;
+  right: 20px;
+  top: 0;
+  padding: 10px;
+  z-index: 2500;
+  text-align: right;
+  
+}
+#icone1{
+  color: #a02571;
+  font-size: 50px;
+  position: fixed;
+  right: 20px;
+  top: 70px;
+  padding: 10px;
+  z-index: 2500;
+  text-align: right;
+} 
+#icone2{
+  color: #a02571;
+  font-size: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  z-index: 2500;
+  text-align: right;
+}     
+
 
 /* ELEMENTI NEL MAIN - ARTICLE */
 
@@ -121,7 +204,7 @@ h1 {
   line-height: 1.2;
   font-weight: bold;
   letter-spacing: -0.03em;
-  margin-bottom: 0.7em;
+  margin-bottom: 0;
 }
 
 p,
@@ -385,4 +468,16 @@ footer a {
   .toTop {
     display: none;
   }
+}
+.articol{
+  position: relative;
+
+}
+#font{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 70px;
+  color: #969494;
+  opacity: 70%;
 }
