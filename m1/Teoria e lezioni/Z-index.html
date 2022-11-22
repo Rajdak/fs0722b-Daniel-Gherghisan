@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1024px;
+            margin: 0 auto;
+            border: 2px solid black;
+            position: relative;
+            height: 800px;
+        }
+        .container div {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+        }
+        #rosso{
+            background: red;
+            top: 20px;
+            left: 20px;
+        }
+        #blu{
+            background: blue;
+            top: 40px;
+            left: 40px;
+        }
+        #verde{
+            background: green;
+            top: 60px;
+            left: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Z Index</h2>
+     <!--<p> z index va a sovraporre gli elementi di html come su photoshop, crenado dei fogli uno sopra l'altro</p> -->
+    <div class="container">
+        <div id="rosso"></div>
+        <div id="blu"></div>
+        <div id="verde"></div>
+    </div>
+</body>
+</html>

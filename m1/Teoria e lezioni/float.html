@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+        body{
+            margin: 0px;        /* andiamo a mettere 0 px di margine e quindi il nostro testo andrà spostato in cima al foglio */
+        }
+        .container{
+            width: 1200px;
+            margin: 0 auto;     /* il 0 auto di margin serve per centrare l'elemento al centro della pagina */
+            border: 1px solid black;    /*il border crea un bortdo intorno al container, li diamo i parametri */
+        }
+        header{
+            background-color:  navy;
+            text-align: center;     /* cosi dicendo, il contenuto del header è centrato */
+            border: 1px solid navy;
+        }
+        header h1 {
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /*conm font family li andiamo a implementare un font */
+            margin: 0;      /* mettendo il margin diremo che sopra e sotto al testo non avremo spazio */
+        }
+        nav{
+            background-color: blueviolet;
+            height: 20px;
+
+        }
+        nav ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;  /*andiamo a levarli gli elementi che normalemnte avrebbero impostati (ogni elemento ha dei valori predefiniti), cosi li impostiamo a 0 */
+        }
+        nav li {
+            /*display: inline; */    /* andiamo a impostare gli elementi della lista in linea e non uno sopra l'altro (inline occupa solo lo spazio del contenuto, block occupa tutto lo spazio che può su quella linea )*/
+            float: left;
+            /* con il float, gli elementi ci sono MA dobbiamo dire che float ha : gli attrivuti tag non contribuiscono all'altezza del contenitore !! ci sono ma non si vedono, dobbiamo dare perciò un altezza al NAV */
+            border-right: 1px solid white; width: 200px; /* mettiamo dei bordi dei nostri (dobbiamo mettere il diplsay inline block, perche questo andrà a leggere i bordi e distanzia gli elementi, solo inline non legge gli spazi)*/
+            padding: 0 90px;    /* mettiamo il padding solo a destra e sinistra */
+        }
+        nav a {
+            color: aliceblue;
+            text-decoration: none;  /* cosi diciamo che il testo non avrà nessuna decorazion che per default sarà sottolineato, mettendo il none andiamo a levarlio il sottolineato */
+            display: block;
+            line-height: 30px;  /* diamo un altezza alla riga per centrare in verticale */
+        }
+        nav a:hover {
+            background-color: white;
+            color: blueviolet;      /* mettiamo un hover su a cosi quando passo il mouse il testo diventa di colore viola */
+        }
+
+        /*MAIN*/
+        main {
+            padding: 15px;
+        }
+
+        
+        aside{
+            float: left;        /*diamo un float perche cosi impostiamo l'aside a sinistra, e il resto degli elementi andranno a mettersi alla destra di questo elemento */
+            width: 300px;   /* diamo una larghezza massima da occupare */
+        }
+        section{
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+        #right{
+            float: right;
+            width: 150px;
+        }
+        article img{
+            width: 100px;
+        }
+        article p {
+            text-align: center;     /*centriamo i p dentro ogni article */
+        }
+        .sx{
+            float: left;
+        }
+        .dx{
+            float: right;
+        }
+        
+
+
+
+
+        /*FOOTER*/
+
+        footer{
+            background-color: blueviolet;
+            color: aliceblue;
+            text-align: center;
+            clear: both;    /*il footer si va a posizionare sotto lascinado nulla a sinistra o destra*/
+        }
+
+        footer p {
+            margin: 0;
+        }
+        
+        
+    </style>
+</head>
+<body>   
+  <div class="container">   </div>           <!-- creiamo un container che andrà a contenere il nostro float (css)-->
+   <header>
+        <h1>Epicode</h1>
+        <nav>
+            <ul>
+                <li><a href="a">Html</a></li>
+                <li><a href="a">Css</a></li>
+                <li><a href="a">javascript</a></li>
+                <li><a href="a">Typescript</a></li>
+                <li><a href="a">Angula</a></li>
+            </ul>
+        </nav>
+   </header>
+   <main>
+    <!-- Ora proviamo a fare un affiancamento tra i due elementi aside e dection--> 
+    <aside>
+        <img src="images/mango.png" alt=""><br>
+        <img src="images/mango.png" alt="">
+    </aside>
+    <aside id="right">
+        <img src="images/mango.png" alt=""><br>   <!-- mettiamo il secondo aside subito sotto il primo, pèerchè dobbiamo mettere prima gli elementi con il float-->
+        <img src="images/mango.png" alt="">
+    </aside>
+    <section>
+        
+        <article>
+            <img src="images/mango.png" alt="" class="sx"><br>
+            <p>Croissant tootsie roll dragée chupa chups jelly cotton candy jujubes cheesecake jujubes. Caramels tootsie roll oat cake cheesecake gummies ice cream wafer bear claw. Liquorice chocolate bar tiramisu oat cake jelly-o. Dessert bear claw jelly tiramisu macaroon. Chocolate dragée bonbon oat cake candy ice cream liquorice croissant oat cake. Gingerbread croissant pastry chocolate bar carrot cake pudding sugar plum cookie cheesecake. Gingerbread tart topping carrot cake gingerbread lemon drops brownie chocolate bar jelly.</p>
+        </article>
+        <article>
+            <img src="images/mango.png" alt="" class="dx"><br>
+            <p>Candy canes biscuit toffee cookie cotton candy jelly. Chocolate cake bonbon carrot cake sesame snaps gingerbread pie. Dragée carrot cake croissant ice cream marshmallow dessert pie. Donut sweet roll tart gingerbread sweet roll pastry croissant ice cream chocolate. Dessert fruitcake apple pie biscuit gummies lollipop. Oat cake lemon drops cheesecake gummies jelly beans lollipop. Chocolate sugar plum fruitcake tiramisu topping tootsie roll dragée. Dragée gummi bears tiramisu donut tootsie roll gingerbread icing pie.</p>                    
+    </article>
+    <article>
+        <img src="images/mango.png" alt="" class="sx"><br>
+        <p>Candy sweet carrot cake cake bear claw. Donut fruitcake pie gummi bears powder candy shortbread cake bear claw. Icing powder candy canes topping bonbon liquorice croissant lemon drops. Lollipop cake gummies cake dessert chocolate bar toffee. Sugar plum sweet tootsie roll brownie donut cupcake toffee. Biscuit chocolate ice cream bonbon donut. Candy canes chocolate bar sweet muffin croissant soufflé marshmallow macaroon pastry.</p>
+    </article>
+    <article>
+        <img src="images/mango.png" alt="" class="dx"><br>
+        <p>Croissant tootsie roll dragée chupa chups jelly cotton candy jujubes cheesecake jujubes. Caramels tootsie roll oat cake cheesecake gummies ice cream wafer bear claw. Liquorice chocolate bar tiramisu oat cake jelly-o. Dessert bear claw jelly tiramisu macaroon. Chocolate dragée bonbon oat cake candy ice cream liquorice croissant oat cake. Gingerbread croissant pastry chocolate bar carrot cake pudding sugar plum cookie cheesecake. Gingerbread tart topping carrot cake gingerbread lemon drops brownie chocolate bar jelly.</p>
+    </article>  
+    <article>
+        <img src="images/mango.png" alt="" class="sx"><br>
+        <p>Candy canes biscuit toffee cookie cotton candy jelly. Chocolate cake bonbon carrot cake sesame snaps gingerbread pie. Dragée carrot cake croissant ice cream marshmallow dessert pie. Donut sweet roll tart gingerbread sweet roll pastry croissant ice cream chocolate. Dessert fruitcake apple pie biscuit gummies lollipop. Oat cake lemon drops cheesecake gummies jelly beans lollipop. Chocolate sugar plum fruitcake tiramisu topping tootsie roll dragée. Dragée gummi bears tiramisu donut tootsie roll gingerbread icing pie.</p>                 
+    </article>   
+    <article>
+        <img src="images/mango.png" alt="" class="dx"><br>
+        <p>Candy sweet carrot cake cake bear claw. Donut fruitcake pie gummi bears powder candy shortbread cake bear claw. Icing powder candy canes topping bonbon liquorice croissant lemon drops. Lollipop cake gummies cake dessert chocolate bar toffee. Sugar plum sweet tootsie roll brownie donut cupcake toffee. Biscuit chocolate ice cream bonbon donut. Candy canes chocolate bar sweet muffin croissant soufflé marshmallow macaroon pastry.</p>
+    </article>
+        
+    </section>
+
+   </main>
+
+   <footer>
+        <p>Footer</p>
+    </footer>
+</body>
+</html>
+

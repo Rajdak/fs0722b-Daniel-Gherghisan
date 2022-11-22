@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position absolute</title>
+    <style>
+        div.relative{
+            margin: 0 auto;
+            position: relative;
+            width: 415px;
+            height: 250px;
+            border: 3px solid red;
+            left: 50px;     /*se spostiamo il quadrato padre, si sposteranno anche gli elementi all'interno insieme a lui */
+        }
+        div.absolute {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 100px;
+            border: 3px solid blue;
+            text-align: center;
+        }
+        div.absolute_2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 100px;
+            border: 3px solid green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Position absolute</h2>
+    <p>Un elemento che ha position absolute, si posizione relativamente al suo ancestor (genitore opiu vicino></p>
+    <div class="relative">
+        Questo div rosso ha position relatrive
+        <div class="absolute">              <!--creiamo 2 qaudrati che andranno a inserirsi dentro al quadrato gigante-->  
+            Questo div blu ha position absolute
+        </div>
+        <div class="absolute_2">
+            Questo div blu ha position absolute
+        </div>
+    </div>
+
+</body>
+</html>
