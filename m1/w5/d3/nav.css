@@ -1,0 +1,33 @@
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    background: rgb(221, 213, 137);
+    color: chocolate;
+    border-radius: 40px;
+    padding: 1em;
+
+}
+ .nav ul {    
+        list-style: none;
+        margin: 0 ;
+        padding: 0 ;
+        display: flex;  
+        flex: 3;  
+}
+.nav li {
+    margin-right: 15%;
+    border: 1px solid yellow;
+    border-radius: 30px;
+    padding: 1em;
+    
+}
+.class{
+    flex-grow: 2;
+}
+.nav img {
+    height: 25px;
+    width: 25px;
+    float: left;
+}

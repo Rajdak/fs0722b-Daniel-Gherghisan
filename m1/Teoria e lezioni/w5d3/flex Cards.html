@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Cards</title>
+    <style>
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;   /* va ad alineare gli items */
+        }
+        .card {
+            flex: 0 0 200px;        /* sono valori di grow schrink e basics ( in ordine cosi ) */
+            margin: 10px;
+            border: 1px solid white;
+            box-shadow: 2px 2px 6px 0px black;
+            
+            
+        }
+        .card img {
+            max-width: 100%;    /* li diamo una proprietà responsive */
+        }
+        .card .text {
+            padding: 0 20px 20px;
+        }
+        .card .text > button {
+            background: gray;
+            color: aliceblue;
+            padding: 10px;
+            border: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<main class="cards">
+    <article class="card">
+        <img src="photo flex cards/23m.jpeg" alt="Sample photo">
+        <div class="text">
+            <h3>Seamlessly visualize quality</h3>
+            <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
+            <button>Here's why</button>
+        </div>
+    </article>
+    <article class="card">
+        <img src="photo flex cards/15l.jpeg" alt="Sample photo">
+        <div class="text">
+            <h3>Seamlessly visualize quality</h3>
+            <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
+            <button>Here's why</button>
+        </div>
+    </article>
+    <article class="card">
+        <img src="photo flex cards/27m.jpeg" alt="Sample photo">
+        <div class="text">
+            <h3>Seamlessly visualize quality</h3>
+            <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
+            <button>Here's why</button>
+        </div>
+    </article>
+</article>
+<article class="card">
+    <img src="photo flex cards/29m.jpeg" alt="Sample photo">
+    <div class="text">
+        <h3>Seamlessly visualize quality</h3>
+        <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
+        <button>Here's why</button>
+    </div>
+</article>
+</article>
+<article class="card">
+    <img src="photo flex cards/28m.jpeg" alt="Sample photo">
+    <div class="text">
+        <h3>Seamlessly visualize quality</h3>
+        <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
+        <button>Here's why</button>
+    </div>
+</article>
+</article>
+<article class="card">
+    <img src="photo flex cards/33m.jpeg" alt="Sample photo">
+    <div class="text">
+        <h3>Seamlessly visualize quality</h3>
+        <p>Collaboratively administrate empowered markets via plug-and-play networks.</p>
+        <button>Here's why</button>
+    </div>
+</article>
+</main>
+</body>
+</html>

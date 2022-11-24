@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+</head>
+
+<style>
+    .main-nav{
+        display: flex;   /* gli elementi contenuti avranno risposte flessibili */
+        background: orangered;
+        color: aliceblue;
+        border-radius: 3px;
+        padding: 1em;
+        font-family: sans-serif;
+    }
+    .main-nav > ul {  /* scrivendo cosi indichiamo tutti gli ul dento a main-nav */
+        list-style: none;
+        margin: 0 ;
+        padding: 0 ;
+        display: flex;  /* cosi scrivendo indichiamo che gli items sono tutti flex e gli affaincherà al main-nav */
+        flex: 3;    /* è item di .main-nav e gli assegniamo un fattore di ingrandimento */
+        
+    }
+    .main-nav li {
+        margin-right: 1em;
+    }
+    .main-nav form {
+        display: flex;
+        justify-content: flex-end;    /* alinea tutti gli elementi del flex container sulla stessa asse del container stesso */
+        flex: 1;       
+    }
+    .main-nav input {
+        flex: 1;
+    } 
+    .main-nav button {
+        background-color: aliceblue;        /* andiamo a dare le caratteristiche al bottone */
+        color: rgb(0, 0, 0);
+        border: 0;
+        border-radius: 1em;
+        padding: 0 1em;
+        margin-left: 0.3em;
+    }
+    /* il codice qui non è ancora responsive, ora aggiungiamo i beackpoints */
+    @media screen and (max-width: 575px) {
+        .main-nav {
+            flex-direction: column;
+        }
+        .main-nav ul {
+            flex-direction: row;
+            margin-bottom: 1em;
+        }
+    }
+
+</style>
+
+<!-- HTML -->
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <ul>
+                <li>Logo</li>
+                <li>Home</li>
+                <li>Products</li>
+                <li>Service</li>
+            </ul>
+            <form>
+                <input type="search" placeholder="Search">
+                <button>Go</button>
+            </form>
+        </nav>
+    </header>
+    <main></main>
+    <footer></footer>
+</body>
+</html>
