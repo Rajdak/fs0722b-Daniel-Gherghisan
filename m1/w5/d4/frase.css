@@ -53,24 +53,7 @@
     animation-delay: 6s;
     color: navy;
 }
-    @-webkit-keyframes scorri {
-        0% { opacity: 0; }
-        2% { opacity: 0; -webkit-transform: translateY(-30px); }
-        5% { opacity: 1; -webkit-transform: translateY(0px);}
-        17% { opacity: 1; -webkit-transform: translateY(0px); }
-        20% { opacity: 0; -webkit-transform: translateY(30px); }
-        80% { opacity: 0; }
-        100% { opacity: 0; }
-    }
-    @-ms-keyframes scorri {
-        0% { opacity: 0; }
-        2% { opacity: 0; -ms-transform: translateY(-30px); }
-        5% { opacity: 1; -ms-transform: translateY(0px);}
-        17% { opacity: 1; -ms-transform: translateY(0px); }
-        20% { opacity: 0; -ms-transform: translateY(30px); }
-        80% { opacity: 0; }
-        100% { opacity: 0; }
-    }
+ 
     @keyframes scorri {
         0% { opacity: 0; }
         2% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
