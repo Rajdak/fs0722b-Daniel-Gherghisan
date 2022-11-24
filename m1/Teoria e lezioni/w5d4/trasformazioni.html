@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trasformazione</title>
+    <style>
+        div.a{
+            width: 150px;
+            height: 80px;
+            background-color: yellow;
+            transform: rotate(20deg);  /* questo comando farà ruotare l'elemnto appena creato di 20 gradi */
+            margin: 50px;
+        }
+        div.b {
+            width: 150px;
+            height: 80px;
+            background-color: yellow;
+            margin: 50px;
+            transform: skew(20deg, 20deg);  /* anche questo comando fa ruotare dandoli due valori di x e y (farà ruotare l'immagine stretchandola, se diamo valori negativi la rotazione andrà al contrario )*/
+        }
+        div.c {
+            width: 150px;
+            height: 80px;
+            background-color: yellow;
+            margin: 50px;
+            transform: scale(1.5, 1.5);     /* questo comando farà scalare l'immagine su un asse x e un asse y, influenzando anche gli elementi all'interno (se il valore è troppo grande, i contenuti verrano spostati fuori) */
+        }
+        .box {
+            width: 150px;
+            height: 80px;
+            background-color: aqua;
+            margin: 105px;
+            transform: rotate(45deg) scale(1.3);    /* diamo due attributi a transform, possiamo darne anche di piu */
+        }
+    </style>
+</head>
+<body>
+    <h2>La proprietà da transformare</h2>
+    <h2>transform rotate</h2>
+    <div class="a">Rotate</div>
+    <h2>transform skew</h2>
+    <div class="b">Skew</div>
+    <h2>transform scale</h2>
+    <div class="c">Scale</div>
+    <h2>Più trasformazioni assieme</h2>
+    <div class="box">box</div>
+</body>
+</html>

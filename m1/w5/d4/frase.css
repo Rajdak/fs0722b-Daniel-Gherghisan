@@ -1,0 +1,82 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+#testoAlternato{
+    width: 1000px;
+    margin: 0 auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    padding: 20px;
+    margin-top: 150px;
+    border: 2px solid navy;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+.parola{
+    margin: 0;
+    text-align: left;
+    text-shadow: 1px 1px 1px black;
+}
+.parola span{
+    color: black;
+    font-size: 150%;
+    font-weight: normal;
+}
+.parole{
+    display: inline;
+    text-indent: 10px;
+}
+.parole span {   
+    overflow: hidden; 
+    position: absolute;
+    text-shadow: 1px 1px 1px black;
+    animation-name: scorri;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    opacity: 0;
+}
+.parole span:nth-child(2) {
+    animation-delay: 3s;
+    color: navy;
+}
+.parole span:nth-child(3) {
+    animation-delay: 6s;
+    color: navy;
+}
+    @-webkit-keyframes scorri {
+        0% { opacity: 0; }
+        2% { opacity: 0; -webkit-transform: translateY(-30px); }
+        5% { opacity: 1; -webkit-transform: translateY(0px);}
+        17% { opacity: 1; -webkit-transform: translateY(0px); }
+        20% { opacity: 0; -webkit-transform: translateY(30px); }
+        80% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    @-ms-keyframes scorri {
+        0% { opacity: 0; }
+        2% { opacity: 0; -ms-transform: translateY(-30px); }
+        5% { opacity: 1; -ms-transform: translateY(0px);}
+        17% { opacity: 1; -ms-transform: translateY(0px); }
+        20% { opacity: 0; -ms-transform: translateY(30px); }
+        80% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    @keyframes scorri {
+        0% { opacity: 0; }
+        2% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+        5% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
+        17% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
+        20% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+        80% { opacity: 0; }
+        100% { opacity: 0; }
+    }

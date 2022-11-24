@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            position: absolute;
+            width: 1500px;
+            height: 800px;
+            margin: 0 auto;
+            border: 2px solid black;
+            padding: 5px;
+            background-color: rgb(198, 250, 250);
+            z-index: 0;
+        }
+        #fondo {
+            margin: 0 auto;
+            padding: 25px;
+            height: 700px;
+            width: 1000px;
+            display: block;
+            position: absolute;
+            z-index: 1;
+        }
+        .coralli{
+            z-index: 3;
+        }
+        #arc{
+            z-index: 2;
+            animation-name: movimento;
+            animation-duration: 10s;
+            animation-delay: 0s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+        }
+        #cardi{
+            animation-duration: 10s;
+            animation-delay: 0s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            z-index: 2;
+            animation-name: movimento;
+        }
+        @keyframes movimento {
+            0% {transform: translate(0.0);}
+            100% {transform: translate(1000px,0);}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="fondo" src="immaginipesci/fondo.jpg">
+        <img class="coralli" id="cora1" src="immaginipesci/corallo.gif">
+        <img class="coralli" id="cora2" src="immaginipesci/corallo.gif">
+        <img id="cardi" src="immaginipesci/cardinale.gif">
+        <img id="arc" src="immaginipesci/pesce-arciere.gif">
+    </div>
+</body>
+</html>

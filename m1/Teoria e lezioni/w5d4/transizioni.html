@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transizioni</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: navy;
+            transition: transform 5s, width 5s, height 5s;  /* li diamo un tempo in cui la width cambierà al passaggio di hoveer */
+              /* cosi scrivendo diamo pure una stransizione di rotazione di 5 secpndi */
+            transition-delay: 0.5s;   /* li diamo un ritardo alla transition di un secondo */
+        }
+        div:hover {     /* idnichiamo che quando passa il mouse, il nostro div cambia i suoi valore */            width: 300px;
+            width: 300px;
+            transform: rotate(360deg);
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2>la proprietà transizione</h2>
+    <p>Allo stato hover (il metodo piu facile per fare una transizione) il mio div cambierà le sue proprietà</p>
+    <div></div>
+</body>
+</html>
