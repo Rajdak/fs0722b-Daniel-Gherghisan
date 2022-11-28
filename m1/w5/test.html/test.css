@@ -3,8 +3,7 @@
     background: #ffc017;  
     position: sticky;
     top: 0;
-    z-index: 1000;
-    
+    z-index: 1000;   
 }
 .main-nav{
     position: -webkit-sticky;
@@ -199,12 +198,10 @@
 
 /*Footer float*/
 
-.floater {
+.floater {    
     float: right;
-    width: 700px;
     position:sticky;
     top: 50%;
-    margin-right: 10%;
 }
 .floater h3 {
     font-weight: bold;
@@ -213,17 +210,10 @@
 }
 .floater span {
     border-radius: 10px;
-    border: 1px solid black;
-    margin-right: 50px;    
+    border: 1px solid black;   
 }
-.floater .spann {
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 10px;
-}
-
 #separatore {
-    width: 80%;
+    width: 100%;
     border: 1px solid black;
     opacity: 0.7;
     margin-top: 20px;
