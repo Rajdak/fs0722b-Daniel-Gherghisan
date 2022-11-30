@@ -1,0 +1,89 @@
+@charset "UTF-8";
+nav {
+  display: block;
+}
+nav ul {
+  display: inline; /* possiamo scrivere anninando i selettori tra loro */
+  background: yellow;
+  border: 1px solid black;
+}
+
+/* selettori nidificati*/
+#main p { /*è vincolato dai selettori che lo contengono e quindi non devo riscrivere il parent*/
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+#main span {
+  font-size: 1.2em;
+}
+#main a {
+  color: red;
+  text-decoration: none;
+}
+
+#main2 { /* annidiamo tutto */
+  background-color: black;
+}
+#main2 div {
+  color: whitesmoke;
+  padding: 5px;
+}
+#main2 div .red {
+  color: wheat;
+}
+#main2 div .red a {
+  text-decoration: none;
+}
+
+.esempio {
+  background-color: grey;
+}
+.esempio h1 {
+  color: rgb(12, 12, 12);
+  font-size: 52px;
+  /* le mie classi diventano modulari, e possiamo inestare una classe dentro un'altra anche se su html non lo sono */
+}
+.esempio h1 .bottone {
+  background-color: beige;
+  color: black;
+}
+
+#pippo {
+  color: red;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+#pippo:hover { /* usiamo la keyword & quando non abbiamo la necessità di ripetere quella pseudo-classe */
+  text-decoration: underline;
+}
+
+.esempio2 {
+  background-color: black;
+}
+.esempio2 h1 {
+  color: aquamarine;
+}
+.esempio2 h1:hover {
+  font-size: 52px;
+}
+.esempio2 .bottone {
+  background-color: beige;
+}
+
+.main3 {
+  background-color: antiquewhite;
+  color: black;
+}
+.main3-sidebar {
+  border: 1px solid black;
+  padding: 10px;
+}
+body.firefox .main3 { /* farà il line-heigh tu main3*/
+  line-height: 1.5em;
+}
+
+#main4 {
+  font-family: Georgia;
+  font-size: 1.5em;
+  font-weight: bold;
+}/*# sourceMappingURL=app.css.map */

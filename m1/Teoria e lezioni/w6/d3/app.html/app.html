@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css"> <!-- colleghiamo il file css-->
+    <title>Document</title>
+</head>
+<body class="firefox">
+    <nav>
+        <ul>
+            <il>Primo</il>
+            <il>Secondo</il>
+            <il>Terzo</il>
+        </ul>
+    </nav>
+    <!-- selettori nidificati-->
+    <div id="main">
+        <p>paragrafo di main</p>
+        <span>span di main</span>
+        <a href="a">link di main</a>
+    </div>
+    <!-- selettori nidificati 2-->
+    <div id="main2">
+        <div>
+            testo
+            <p class="red">testo con <a href="#">link</a></p>
+        </div>
+    </div>
+    <!-- nesting-->
+    <div class="esempio">
+        <h1 class="titolo">Titolo child</h1>
+        <p class="para">paragrafo</p>
+        <button class="bottone">Clicca qui</button>
+    </div>
+    <!--keyword-->
+    <a href="#" id="pippo">link pippo</a>
+
+    <div class="esempio2">
+        <h1>Keyword &</h1>
+        <button class="bottone">Prova</button>
+    </div>
+    <div id="main3">
+        <p>testo main3</p>
+        <div id="main3-sidebar">
+            <p> testo contenuto in<code>main3-contenuto</code></p>
+        </div>
+    </div> <!--dichiariamo una classe a body (firefox)-->
+
+    <!-- proprietà nidificate (proprietà css che hanno un prefisso comune)-->
+    <div id="main4">
+        <p>testo con proprietà nidificate</p>
+    </div>
+</body>
+</html>

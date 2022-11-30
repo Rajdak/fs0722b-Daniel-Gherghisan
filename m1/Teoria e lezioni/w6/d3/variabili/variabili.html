@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Sass seconda parte</title>
+</head>
+<body>
+    <!-- le variabili sono tipizzate dinamicamente
+    valori possibili : -numeri(1,2,3 10px, 2em)
+                       - stringhe di testo('hello',"goodbye", ciao (anche senza apici cva bene perchè non collide con altre variabili))
+                       - colore(red,blue, #ffcc00,rgba(10,0,230,0,51))
+                       - booleani (true,false)
+                       - null 
+                       - lista di valori (5px 5px 10px oppure helvetica, arial, sans-serif)
+                       - mappa chiave/valore (nome: federico, cognome:cicicobello)
+                       - $set-colori: (grigio:#ccc; blu:#00f)
+                       - operatori logici, comparazione, numerici
+    le variabili servono, per memorizzare valori, e questi corrisponderanno ai parametri delle regole di stile,
+    imposto una variabile, la utilizzo in una specifica proprietà e la assegno al selettore
+    tipicamente le variabili in sass non vengono riassegnate (comportandosi di fatto come delle costanti)
+    esempio:
+    $main-margin-top: 30px (questo parametro potrebbe essere ripetuto piu volte, quindi grazie a saas possiamo modifare il valore di sass, intervenendo una volta sola sulla variabile, ma modifico tutte le sue assegnazioni)
+    button {
+        margin-top: $main-margin-top
+    }
+    .left {margin-top: $main-margin-top}
+    h1 {margin-top: $main-margin-top}
+
+
+
+
+    un argomento importante sono i PARTIALS,  ci permettono di lavorari su piccoli files che si occupano di specifiche porzioni di codice
+    i particals possono essere ricombinati in un unico css, questo rende il lavoro modulare e più facile da gestire.
+    sintassi -> un file partials si distingue perche prevede un _inziale
+    es:
+    _header.scss  formatta le proprietà child del tag <header>
+    _footer.scss   formatta le proprietà chil del tag <footer>
+        dentro i file partials la sintassi è sempre la stessa identica SASS (.scss) di tutti gli altri file
+
+        style.css -> un file .scss principale che incorpora gli altri partials
+        sintassi -> @import 'nome_del_file_partial'
+        il file scss principale può: incorporare solo partials, incorporare partials e sintassi scss
+        esempi di main.scss:
+        @import 'header':
+        $colore: #abc;
+        body {background-colo:$colore}
+        @import 'footer':
+-->
+<div class="container">
+    <button class="btn">Prova</button>
+</div>
+
+
+</body>
+</html>
