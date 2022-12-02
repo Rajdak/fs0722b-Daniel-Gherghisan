@@ -1,0 +1,128 @@
+body {
+  background-color: navy;
+  color: wheat;
+}
+
+header {
+  background-color: rgb(151, 96, 223);
+}
+
+.container span {
+  font-weight: bold;
+  font-size: 30px;
+}
+.container .main-menu {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.container .main-menu li {
+  list-style-type: none;
+  margin-left: 30px;
+}
+.container .main-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+}
+
+.contitolo {
+  background-image: url("immagini/pexels-aleksandar-pasaric-325185.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.titolo {
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 900px;
+}
+.titolo h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+.titolo p {
+  font-size: 15px;
+  font-weight: 600;
+}
+.titolo button {
+  background-color: rgb(151, 96, 223);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.container3 {
+  background-color: #f5f5f5;
+}
+.container3 .container2 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.container3 .container2 .row {
+  margin-right: 0;
+  background-color: #f5f5f5;
+}
+.container3 .container2 .card {
+  border: none;
+  background-color: #f5f5f5;
+  padding: 40px;
+}
+.container3 .container2 .card i {
+  font-size: 30px;
+}
+
+.container4 h2 {
+  font-size: 40px;
+}
+.container4 .loghi {
+  margin-top: 70px;
+}
+.container4 .loghi img {
+  width: 50%;
+  height: 70%;
+}
+
+.container5 {
+  text-align: center;
+}
+.container5 h2 {
+  font-weight: bold;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+.container5 p {
+  font-size: 20px;
+  font-weight: 400;
+}
+.container5 .car img {
+  width: 10%;
+  height: 10%;
+  border-radius: 100%;
+}
+.container5 .car p {
+  font-weight: bold;
+}
+
+.container6 {
+  background-color: rgb(151, 96, 223);
+  margin-top: 30px;
+}
+.container6 p {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+.container6 h5 {
+  color: white;
+}
+.container6 ul .nav-link {
+  color: white;
+}
+.container6 .row {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.container6 h4 {
+  color: white;
+}/*# sourceMappingURL=test.css.map */

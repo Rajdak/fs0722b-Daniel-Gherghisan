@@ -1,0 +1,7 @@
+/* settiamo 2 template diversi, li facciamo con values dark, bright */
+/*facciamo i template colors*/
+/*usiamo un mixin per vedere if o else, carico uno o l'altro*/
+body {
+  background-color: #000;
+  color: #eeee99;
+}/*# sourceMappingURL=if.css.map */

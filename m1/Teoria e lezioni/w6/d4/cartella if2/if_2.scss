@@ -1,0 +1,16 @@
+$template: dark;
+
+$bg-dark:black;
+$fg-dark: grey;
+$bg-bright: wheat;
+$fg-bright: wheat;
+body{
+    @if $template == dark {
+        background-color: $bg-dark;
+        color: $fg-bright;
+    } 
+    @else {
+        background-color: $bg-bright;
+        color: $fg-dark;
+    }
+}

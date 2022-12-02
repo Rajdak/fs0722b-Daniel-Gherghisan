@@ -1,0 +1,17 @@
+.header {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: rgb(64, 52, 133);
+  color: aliceblue;
+  width: 100%;
+  padding: 10px;
+}
+.header .header {
+  padding: 10px;
+  margin-left: 20px;
+}
+.header .header .ul li {
+  list-style-type: none;
+  display: inline-flex;
+  margin-right: 20px;
+  line-height: 50%;
+}/*# sourceMappingURL=esercizio.css.map */

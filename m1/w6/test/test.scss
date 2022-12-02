@@ -1,0 +1,151 @@
+@import 'var';
+@import 'function';
+
+$template: p;
+
+    @if $template == dark {
+    body{
+        background-color: $bg-bright;
+        color: $fg-dark;
+        }
+       
+    }
+    @else if $template == bright {
+        body{
+            background-color: $bg-dark;
+            color: $fg-bright;
+        }
+       
+    }
+    @else {
+        body{
+            background-color: $bg-none;
+            color: $fg-none;
+        }
+       
+    }
+
+header{
+    background-color: $bg-bright;
+}
+.container {
+    span {
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .main-menu{
+        margin-bottom: 0;
+        padding-left: 0;
+        li{
+            list-style-type: none;
+            margin-left: 30px;
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 25px;
+            }
+        }
+    }
+}
+.contitolo{
+    background-image: url('immagini/pexels-aleksandar-pasaric-325185.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.titolo {
+    padding: 10px;
+    margin-left: 10%;
+    margin-right: 10%;   
+    height: 900px;    
+    h1{
+        font-weight: bold;
+        font-size: 50px;
+    }
+    p {
+        font-size: 15px;
+        font-weight: 600;
+    }
+    button {
+        background-color: $bg-bright;
+        border-radius: 5px;
+        margin-top: 10px ;
+    }
+}
+.container3{
+    background-color: $bg-dark;
+.container2 {    
+    margin-left: 10%;
+    margin-right: 10%;
+    .row {
+        margin-right: 0;
+        background-color: $bg-dark;
+    }
+    .card{
+        border: none;
+        background-color: $bg-dark;
+        padding: 40px;
+        i{font-size: 30px;}
+    }
+ }
+}
+.container4{
+    h2{
+        font-size: 40px;
+    }
+    .loghi{
+        margin-top: 70px;
+    img{
+        width: 50%;
+        height: 70%;
+    }
+}
+}
+.container5{
+    text-align: center;
+    h2{
+        font-weight: bold;
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .car{
+        img{
+            width: 10%;
+            height: 10%;
+            border-radius: 100%;
+           }
+        p{
+            font-weight: bold;
+
+        }
+    }
+
+}
+.container6 {
+    background-color: $bg-bright;
+    margin-top: 30px;
+    p{
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+    }
+    h5{
+        color: white;
+    }
+    ul{
+    .nav-link{
+        color: white;
+    }
+    }
+    .row{
+    margin-left: 10%;
+    margin-right: 10%;
+    }
+    h4{
+        color: white;
+    }
+}

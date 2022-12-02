@@ -1,0 +1,28 @@
+/* settiamo 2 template diversi, li facciamo con values dark, bright */
+
+$template: dark;
+
+/*facciamo i template colors*/
+
+$bg-dark: #000;
+$fg-dark: #999;
+$bg-bright: #eeee99;
+$fg-bright: #eeee99;
+
+/*usiamo un mixin per vedere if o else, carico uno o l'altro*/
+
+@mixin colors {
+    @if $template == dark {
+        background-color: $bg-dark;
+        color: $fg-bright;
+    }
+    @if $template == bright {
+        background-color: $bg-bright;
+        color: $fg-dark
+
+    }
+}
+
+body{
+    @include colors;
+}
