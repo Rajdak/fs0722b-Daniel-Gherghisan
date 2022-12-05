@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var oggettoVuoto = {};
+        var persona = {"nome": "Mario", "cognome": "Rossi"} // inserisco delle proprietà dette coppie nome:valore
+                //sintassitamente possso scriverlo anche senza apici il nome es: var persona = {nome: "Mario"; cognome: "Rossi"}
+
+        // una proprietà può avere come valore qualsiasi espressione derivante da un'espressione javascript COMPRESO un altro oggetto
+        var persona = {
+            nome: "Mario",
+            cognome: "Rossi",
+            indirizzo: {    // in questo caso, indirizzo è un oggetto che a sua volta è composto da altre proprietà 
+               via: "Via Roma",
+                numero: 1,
+                cap: 20100
+            }
+        }
+
+        // per accedere ad una proprietà di un oggetto scriveremo : oggetto.persona
+        var nome = persona.nome;
+        var nome = persona["nome"]; // questo lo scriviamo quando il nome della proprietà non segue le regole di naming
+        // se provo ad accedere ad una proprietà non definita in un oggetto, mi restituirà il valore undifined (che è un tipo primitivo di dato)
+
+        // creiamo definendo , cioè assegnamo un valore ad una proprietà non definita
+        persona.eta = 42;   // cosi facendo creiamo una nuova proprietà inizializzando con un valore
+        // gli oggetti sono entità dinamichem, possono cioè evolvere o cambiare dutrante l'esecuzione di uno script (DEFINZIONE INCREMENTALE)
+        // l'oggetto avrà una rappresentazione di base che può essere arricchita via via con le proprietà che piu vogliamo
+
+        //METODI
+        // i metodi sono le azioni che un oggetto deve svolgere
+
+        function visualizzaNomeCognome() {return "Mario Rossi";}    //funzione che restituisce una stringa
+        persona.nomeCognome = visualizzaNomeCognome;    //assegnamo il nome della funzioone ad una nuova proprietà dell'oggetto Persona (assegniamo la funzione stessa)
+        // la proprietà nomeCoognome contiene una funzione ed è quindi un metodo
+
+        var nomeCognome = persona.nomeCognome();    //qui facciamo riferimento ad esso per eseguirlo con () , come se fosse una funzione
+        persona.nomeCognome = function () {return "Mario Rossi"}    //metodo alternaticvo per eseguire la funzione
+        // l'ultima chiamata non è la migliore,perchè se cambiassimo il valore della proprietà, lui cmq mostrerebbe sempre mario rossi
+        // abbiamo un metodo per visualizzare sempre il valore della proprietà corrente, usiamo THIS
+        persona.nomeCognome = function () {return this.nome + " " + this.cognome;} // cosi restituisce i valori correnti delle proprietà
+
+</script>
+</body>
+</html>

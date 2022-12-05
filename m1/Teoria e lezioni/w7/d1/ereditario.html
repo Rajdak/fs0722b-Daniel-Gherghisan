@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var MarioRossi = new persona("Mario", "Rossi");
+        var GiuseppeVerdi = persona("Giuseppe", "Verdi");
+        marioRossi.telefono = "39128409185" // possiamo aggiungere all'oggetto cose
+        // creo una nuova proprietà a Mario Rossi senza influienzare la struttura di Giuseppe Verdi
+        // Possiamo creare oggetti partendo da una struttura giaà data, e poi quegli oggetti li possiamo personalizzare discostandoli dalla struttura
+        // usaimo Prototype ( persona.protorype.telefono = "18454512")
+        // cosi scrivendo, tutti gli oggetti creati con il costruttore persona prenderanno anche la proprietà telefono
+
+        function Student(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        var studente1 = new Student("Luigi Bianchi", 43);
+        var student2 = new Student("Maria Rossi", 32);
+        console.log(studente1, studente2);
+    </script>
+</body>
+</html>

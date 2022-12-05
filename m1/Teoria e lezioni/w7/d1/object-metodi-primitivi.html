@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // i tipi di dati primitiovi sono definite come strutture semplici (assegno un valore ad una variabile)
+        // gli oggetti sono strutture complesse perchè assegno un oggetto ad una variabile (piu valori ad una variabile)
+        // questo non contiene effettivamente l'oggetto ma un riferimento ad esso
+
+        var x = 10;
+        var y = x;
+        y = y + 1;
+        // nei dati primitivi, ciascuna variabile nmantine il valore assegnato
+        var persona = {nome: "Mario", cognome: "Rossi"};
+        var altraPersona = persona;
+        altraPersona.nome = "Giuseppe";
+        // in questo caso, persona.nome sarà Giuseppe, perchè sia persona che altraPersona contengono un riferimento alla stessa persona
+        //quindi ogni modifica a persona apporterà modifiche anche ad altraPersona
+
+        // toString() e valueOF() sono metodi condivisi da tutti gli oggetti 
+
+        //toString() restituisce una versione stringa dell'oggetto
+        var x = new Object(32);
+        x.toString();   //restituisce "32"
+        // se l'oggetto non è riconducibile ad un tipo di dato primitivo, restutirà object Object
+        var persona = new Object({nome: "Mario", cognome: "Rossi"});
+        persona.toString(); //restituisce  [object Object]
+    </script>
+</body>
+</html>

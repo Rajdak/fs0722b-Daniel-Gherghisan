@@ -1,6 +1,6 @@
 body {
-  background-color: navy;
-  color: wheat;
+  background-color: rgb(151, 96, 223);
+  color: black;
 }
 
 header {
@@ -21,7 +21,7 @@ header {
 }
 .container .main-menu li a {
   text-decoration: none;
-  color: #fff;
+  color: rgb(10, 10, 10);
   font-size: 25px;
 }
 

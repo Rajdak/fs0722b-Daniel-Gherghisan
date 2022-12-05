@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // possiamo costruire piu ooggetti che condividono la stessa struttura
+        var persona = {
+            nome: "Mario",
+            cognome: "Rossi",
+            indirizzo: "Via dalle palle",
+            email: "email@hotm.com",
+            mostraNomeCOmpleto: function(){},
+            calcolaCodiceFiscale: function(){}
+        }
+        //se usiamo solo la notazione letterale saremmo costretti a ripetere la definzione per ogni oggetto
+        // facendo cosi otteneremo un codice NON riutilizzabbile
+        //per definire da zero oggetti con la stessa struttura useremo un costruttore
+        // il costruttore è una funzione JS (invochiamo con l'operatore NEW)
+        function persona() {    //definisce la proprietà dell'oggetto assegnandola a se stessa (this)
+            this.nome = "";
+            this.cognome = "",
+            this.indirizzo = "",
+            this.email = "",
+            this.mostraNomeCOmpleto = function() {};
+            this.calcolaCodiceFiscale = function() {};
+        }
+        // per creare  un oggetto di tipo persona invoco la funzione usando l'operatore new
+        var marioRossi = new persona ();
+        marioRossi.nome = "Mario";
+        marioRossi.cognome = "Rossi";
+        var giuseppeVerdi = new persona ();
+        giuseppeVerdi.nome = "giuseppe";
+        giuseppeVerdi.cognome = "Verdi";
+        // creo n oggetti con al stessa struttura e imposto solo i valori specifici
+
+        //possiamo anche parametrizzarla
+        function persona(nome, cognome) {    
+            this.nome = nome;
+            this.cognome = cognome,
+            this.indirizzo = "",
+            this.email = "",
+            this.mostraNomeCOmpleto = function() {};
+            this.calcolaCodiceFiscale = function() {};
+        }
+        var marioRossi = new persona("Mario", "Rossi");
+        var giuseppeVerdi = new persona("giuseppe", "Verdi")
+    </script>
+</body>
+</html>

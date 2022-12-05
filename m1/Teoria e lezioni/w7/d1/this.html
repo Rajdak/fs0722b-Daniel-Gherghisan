@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var teacher = {
+            name: "Federico",
+            cognome: "De Ambrosis",
+            sayHEllo: function () {
+                alert("Hello World, i'm" + this.name + " " + this.cognome);
+            }
+        }
+        teacher.sayHEllo();
+
+
+        //possiamo bypassare this accedendo ad una variabile esterna  (rende però il codice instabile)
+        let user = {
+            name: "john",
+            age: 30,
+
+            sayHi(){
+                alert(user.name); //accedo alla variabile esterna anzichè this
+            }
+        };
+        let admin = user;
+        user = null;    // sovrasccrivo user
+        admin.sayHi(); // errore perchè non si può leggere la proprietà di null
+
+        //this può essere utilizzato in qualsiasi funzione, anche se non è il metodo di un oggetto
+        function sayHi(){
+            alert(this.name); //non dà errore di sintassi perchè this al momento dell'esecuzione può avere qualsiasi valore
+        }
+        sayHi();    // sarà undifined (se proviamo ad accedere a this.name darà errore)
+    </script>
+</body>
+</html>
