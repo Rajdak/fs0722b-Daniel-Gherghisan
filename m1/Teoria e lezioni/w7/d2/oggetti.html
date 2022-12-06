@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- JS è un linguaggio "a oggetti" che si basa sul concetto di prototype, mentre gli altri linguaggi sono basati sul concetto di classi,
+    la differenza è che un oggewtto è sempre un istanza di una classe (dobbiamo istanziare sempre una classe per avere un oggetto)
+    se non lo si fa (definire la classe) l'oggetto non potrà esistere.
+    da una classe si può sempre fare delle sottoclassi, che a loro volta potrebbero essere altri oggetti (che prenderebbero il nome di prototipi)
+    ES: classe animali --- sottoclassi mammiferi, rettili ecc
+    nei linguaggi tradizionali, le classi definiscono tutti gli attributi di un oggetto, in JS invcee non solo possiamo deginirle con le classi ma possiamo anche aggiungerne altre, modificandole o arrichendole
+    con attributi o metodi.
+    
+    possiamo quindi definire gli oggetti partendo alle classi
+    arriviamo quindi alla conclusione che usando le classi, nmoi possiamo definire i costruttori
+    -->
+    <script>
+        class persona {
+            constructor(nome, cognome) {    // all'interno della classe definisco il costruttore con una keyword chiamata constructor
+                this.nome = nome;
+                this.cognome = cognome;
+                this.email = "";
+                this.indirizzo = "";
+            }
+            mostraNomeCompleto() {
+                return this.nome + " " + this.cognome
+            }
+        }
+        // il constructo è una classe, in questo caso è solo una semplificazione sintattica
+        //definito ora la classe, com edetto prima possiamo definire un altro oggetto
+        var marioRossi = new persona("Mario", "Rossi"); // partendo dalla classe persona abbiamo definito quindi un altro oggetto
+        // possiamo prenderci i valore dalla classe precedente usando (GET) o posizionare i valori(SET)
+
+
+        //possiamo creare delle sottoclassi e far ereditare i valori dalla classe "principale"
+        //cosi facendo possiamo dire che estendiamo la classe principale
+
+        class programmatore extends persona {   //con extend indichiamo che la classe programmatore deriva dalla classe persona
+            constructor(nome,cognome){  // facciamo il constructor di programmatore
+                super(nome, cognome);   //con super richiamiamo il costruttore della classe persona (super fa riferimento alla super classe (perchè programmatore è una super classe di persona, un qualcosa di piu))
+                this.linguaggiConosciuti = []; 
+            }
+        }
+        //super lo usiamo quando vogliamo richiamare il costructor (keyword)
+
+        //la keyword static è un metodo richiamato all'interno della classe e ne dipende strettamente
+        // a differenza degli altri metodi non può essere chiamato nell'oggetto ma solo nella classe
+        class Animali {
+            constructor(specie){
+                this.specie = specie;
+            }
+            static mostra(){
+                return this.specie;
+            }
+        }
+        var gatto = new Animali("specie_di_gatto");
+        gatto.mostra(); //no
+        Animali.mostra; //si
+    </script>
+</body>
+</html>

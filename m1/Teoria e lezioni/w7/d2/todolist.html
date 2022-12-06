@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="Utente"><button id="aggiungi">Aggiungi</button>
+    <ul id="Listautenti"></ul>
+    <script>
+        let lista = document.querySelector("#Listautenti");      //collego gli elementi da html OPP
+        let inputUtenti = document.querySelector("#Utente");
+        let aggiungi_btn = document.querySelector("#aggiungi");
+        let users = [];
+
+
+        aggiungi_btn.addEventListener("click", ()=> {   
+            let usr = new User(inputUtenti.value);         // è l'oggetto che definiamo a riga 34
+            users.push(usr);    //pushaimo nell'array
+            writelnList();  //lòanciamo la funzione
+        });
+
+        function writelnList(){
+            lista.innerHTML="";
+            users.forEach((el, index)=> {   //parametri di for each (valore corrente, indice, array)
+                lista.innerHTML+=(`<li>${el.logUser()}</li>`);  //utliziziamo il metodo dell'oggetto sotto
+            })
+            console.log(users);
+        }
+
+        //class
+        class User {
+            name="";
+            constructor(_name){
+                this.name = _name;
+            }
+            logUser(){
+                return `<b>${this.name}</b>`
+            }
+        }
+    </script>
+</body>
+</html>

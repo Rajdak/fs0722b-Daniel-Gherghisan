@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- i moduli sono definiti come Design Patern
+    cioè schemi che offrono solzioni a problemi comuni di proggettazione del software
+    sono meglio visti come degli schemi logici con qualità tipi: sono riusabili, indipendenti dal linguaggio di programmazione
+    sono utlizzati per realizzare componendi di codice o softaware in generale di facile manutenzione
+
+    noi ci occpureremo principalmente di module pattern, cioè meccansmi di import ed export.
+    quindi lavoreremo con moduli accessibili ed esportabili-->
+    <script>
+        var modulo = (function() {  // immediatly invoked function
+            function metodoPrivato() {  //restituisce un oggetto con un metodo privato
+
+            }
+            return {
+                metodoPubblico: function() {    //restituisce un oggetto con un metodo pubblico
+                    metodoPrivato()
+                }
+            }
+        })
+        modulo.metodoPubblico();
+    </script>
+</body>
+</html>

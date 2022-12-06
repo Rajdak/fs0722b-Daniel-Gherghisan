@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User{
+            name;
+            surname;
+            age;
+            constructor (_name='',_surname='',_age=0) {
+                this.name = _name;
+                this.surname = _surname;
+                this.age = _age;
+            }
+            greeting(){
+                return `Hi, ${this.name} ${this.surname}`
+            }
+        }
+        var myUser = new User('mario', 'rossi', 43);
+        console.log(myUser.greeting(), myUser);     //vado a vedermi Greeting cosa fa 
+    //tutto questa classe, puo essere scritta anche in un diverso modo 
+    class persona {
+        constructor(nome, cognome, age) {
+            this.nome = nome;
+            this.cognome = cognome;
+            this.age = age;
+            this._email = "";
+            this.indirizzo = "";
+        }
+        mostraNomeCompleto() {
+            return this.name + " " + this.congome;
+        }
+        get email() { return this._email; }      //get prende un valore e set lo mette dove vogliamo
+        set email(value) {
+            var emailRegExp = /\w+@\w+\.\w{2,4}/i;  //questa è una regular expression
+            if(emailRegExp.test(value)) {
+                this._email = value;
+            }
+            else{
+                console.log("email non valide");
+            }
+        }
+    }
+    var mypersona = new persona('mario', 'rossi', '43');
+    console.log(mypersona.mostraNomeCompleto(), mypersona);
+
+
+
+
+   </script>
+</body>
+</html>

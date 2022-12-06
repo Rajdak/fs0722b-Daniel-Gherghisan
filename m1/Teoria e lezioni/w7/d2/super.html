@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- in questo esercizio usiamo la kewyword extends
+         usiamo il metodo super (per chiamare la funzione constructor)
+         stampiamo in un paragrafo con il metodo .inneHTML-->
+         <p id="demo"></p> <!-- facciamo p per poterci scrivere dentro con .InnerHTML-->
+    <script>
+        class Computer {
+            constructor(brand) {
+                this.computerName = brand;
+             }
+             present() {
+                return 'Ho un computer ' + this.computerName;
+             }
+        }
+
+        class Model extends Computer {
+            constructor(brand, mod) {
+                super(brand);   //andiamo a richiamarci il construcotr di Computer nella classe Model
+                this.model = mod;
+            }
+            show() {
+                return this.present() + 'è un ' + this.model;
+            }
+        }
+
+        mycomputer = new Model ("Apple", "MacbookAir");
+        document.getElementById("demo").innerHTML = mycomputer.show();    //facciamo la stampa su html
+    </script>
+</body>
+</html>
