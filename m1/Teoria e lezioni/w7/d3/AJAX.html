@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- eseguire delle richieste http in javascript (prendere dati esterni al nostro sito)
+    per fare ciò usaimo un oggetto di JS della libreria jquery chiamato $.ajax();   (un metodo molto rapido rispetto all'oggetto build-in XMLHttpRequest) 
+    Usiamo quidni l' API fetch, la quale ha una sintassi più semplice e meglio integrata con il modello a oggetti su cui si basa JS
+    Ajax è basato sulla sincronicità, cioè le porzioni di codice che vengono spiluppate possono essere risolte in parallelo tra loro (GMAIl sfrutta lo stesso ajax per il loro sito)
+
+    l' API fetch gestisce le chiamate asincrone utilizzando un meccanismo PROMISE --> 
+    
+    <script>
+        fetch('http://www.epicode.it')      //mettiamo l'url sul quale vogliamo fare la richiesta http (è un parametro della funzione fetch)
+            .then(response => { // gestiamo il risultato con una promise (in caso dovesse entrare, saremo nel ramo .then)
+                console.log(response);  // entrati nel ramo .then ci verrà fornita una risposta sotto forma di oggetto response
+            })
+            .catch(error => console.log("si è verificato un errore"))
+    </script>
+    <!-- l'oggetto response ha diverse proprietà:
+    -status (è un valore): indica il codice di stato http es: 200 -> successo, 404 -> errore
+    -statusText (è una stringa): asscoiato al codice di stato. es: "ok"
+    -ok (valore boolean): da 200 a 299 sono risposte positive, altrimenti sono negative 
+    la PROMISE vienie risolta ogni voltache c'è una risposta da parte del server (ma può succedere che quando siamo dentro al .then, non è garantito che i dati vengano inviati) -->
+    <script>
+        fetch('http://www.epicode.it').then(response => {
+            if(response.ok) {console.log("contenuto ricevutio")};
+            if(response.status >= 100 && response.status < 200) {console.log("informazioni per il client")}
+            if(response.status >= 300 && response.status < 399) {console.log("redirezione")}
+            if(response.status >= 400 && response.status < 499) {console.log("richiesta errata")}
+            if(response.status >= 500 && response.status < 599) {console.log("errori sul server")}
+        }).catch(error => console.log("si è verificato un errore"))
+        //anmche la condizione di errore del server entra nel ramo .then (la promise è risolta positivamente)
+        // catch ci entra solo quando il server non risponde
+        // ora che abbiamo fatto i controlli per il .then andiamo a leggerci la risposta
+    </script>
+
+    <!-- response ci mette a disposizione degli oggetti per leggere il contenuto della risposta 
+        -text() restituisce il contenuto in fomrato testuale
+        -json() restituisce il contenuto sotto fomra di oggetto dopo che ne fa il parsing
+        -blob() restituisce il contenuto sotto forma di dati non strutturari-->
+
+        <script>
+            fetch('http://www.epicode.it').then(response => {
+                if(response.ok){
+                    return response.json();
+                }
+            }) .then(articolo => console.log(articolo.titolo)).catch(eroror => console.log("hai cannato tutto cojone"))
+        //di solito nella richiesta della fonte bisogna specificare anche altre cose e non solo l'url
+        // es: tipo di contenuto, cosa c'è nel body, i metodi
+        fetch("http://www.epicode.it", { 
+            method: "post",
+            headers: new Header({
+                "Content-Type": "application/json"
+                }),
+            body: JSON.stringify({
+                tutolo: "articolo",
+                autore: "Mario Rossi"
+            })
+        
+        }).then(...).catch(...);
+           
+        // usiamo funzioni asincrone async/await
+        //eseguire funzioni asincrone conisste nel:
+        // 1. funzioni di callback (funzioni che vengono passate come parametri di altre funzioni)
+        // 2. promise -> possono vedere lo stato di esecuzione di un attività
+        // async/await sono basate su meccanismo delle priomise e semplificano la sintassi
+        // async dhichiara una funzione asincrona
+        // await sospende invece l'esecuzione in attesa che la promise sia risolta (o rigettata se non va a buon fine)
+        
+        async function getUtente(UserId) {      //getUtente ha davanti async
+            try {   // TRY / CATCH intercettano i casi della promise verficando come è andata la richiesta
+                let response = await fetch("/utente/" + UserId);    // wait getUtenti viene sospeso finchè fetch viene risolto
+                console.log(response);
+            } catch {
+                console.log("Errore")
+            }
+        }
+        //promise ha 3 stati ( RESOLVED (valore disponibile) - REJECTED ( non viene restituito il valore) - PENDING (ne risolta ne regettata))
+        var promise = new Promise(handler); // il parametro della promise
+        var promise = new Promise(function(resolve,reject) {    // due funzioni come parametro
+            if(condizione) {
+                resolve(valore);    // invoco quando la promise è risolta (i dati sono disponibili)
+            }else {
+                reject(motivo); // incovo quando la promise non è risolta
+            }
+        })
+
+        // promise e then
+        var myPromise = httpGet("/utente/123");
+        myPromise.then(         //mettiamo il then  
+            function(utente) {      //si esegue in caso di promise risolta
+                console.log("il server ha risposto a" + utente.nome);
+            },
+            function(error) {       //in caso di promise errata si esegue questa
+                console.log("hai un errore " + error.message)
+            }
+        )
+        </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- includono funzioni nuove, geolocation, web workers, canvas
+    il web storage nasce per risolvere un paio di problemi, come i cookie (4k)
+    e l'impossibilità di immagazinare i cookie di 2 diverse sessioni di navigazione,
+per risolverlo esiste appunto il web storage, che fà in grado di memorizzare i dati di navigazione 
+fino a che almeno una finestra del browser è aperta (una volta chiusa anche questa lo storage si resetta)
+Esiste anche un altro metodo, il local storage, dove i dati rimangono fino a che non vengono cancellati dall'utente stesso
+è un altro vantaggio del local è che abbiamo piu spazio per memorizzare dati (circa 5mb)-->
+    <script>
+        localStorage.nome = 'Daniel';       //salviamo i dati come in un normale array associato
+        localStorage.cognome = 'Gherghisan';
+
+        //possiamo salvarli anche con i metodi associati
+        localStorage.setItem('nome','Daniel');
+        localStorage.getItem('nome');   //cosi restituisce 'Daniel'
+
+        //possiamo inoltre inserire oggetti di diverse stringhe
+        localStorage.ordini = Array("1","2","3");
+        localStorage.ordini; //questo comando fa tornare l'array 1 2 3 
+
+        //abbiamo anche il clear
+        localStorage.clear
+
+        //usiamo il JSON
+        localStorage.ordini = JSON.stringify(Array(1,2,3));
+        JSON.parse(localStorage.ordini);
+    </script>
+</body>
+</html>

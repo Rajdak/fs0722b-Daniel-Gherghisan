@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function startedDelayed(){  //questa parte per seconda
+            return new Promise(resolve => { //questa funzione ha un return, che una volta finita la promise ha un timeout
+                setTimeout(() => {
+                    resolve('it ends'); // questo è quello che scrive
+                }, 5000);
+            });
+        }
+        async function asyncFunction(){
+            console.log('start async'); //questa partirà per prima
+            let ends = await startedDelayed();  //metti tutto in una variabile e aspetti che l'altra funzione finisca
+            console.log(ends);  //una volta finita printi
+        }
+        asyncFunction(); //async per far partire tutto
+    </script>
+</body>
+</html>
